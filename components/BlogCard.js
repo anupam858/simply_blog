@@ -9,18 +9,18 @@ export default function BlogCard({title, author, coverPhoto,datePublished, slug}
                     <div  className={styles.imgContainer}>
                         {coverPhoto ? <img src={coverPhoto.url} alt="" /> : ''}
                     </div>
-                    
-                
+                        
                 <div className={styles.text}>
                         <h2>{title}</h2>
                         <div className={styles.details}>
-                            <img src={author.avatar?author.avatar.url:''} alt="" />
-                            <h3>{author.name}</h3>
+                            <div className={styles.author}>
+                                <img src={author.avatar ? author.avatar.url : ''} alt="" />
+                                <h3>{author.name}</h3>
+                            </div>
+                            <div className={styles.date}>
+                                <h3>{datePublished}</h3>
+                            </div>
                         </div>
-                        <div className={styles.date}>
-                            <h3>{datePublished}</h3>
-                        </div>
-
                 </div>
             </div>
         </Link>

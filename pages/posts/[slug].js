@@ -1,6 +1,6 @@
 import Head from "next/head";
-import {GraphQLClient, gql} from 'graphql-request';
-import styles from '../../styles/Slug.module.css'
+import {GraphQLClient, gql} from "graphql-request";
+import styles from "../../styles/Slug.module.css";
 
 const graphQLCMS = new GraphQLClient(
     "https://api-ap-south-1.graphcms.com/v2/cl3tua5xscl2l01z666kw4njj/master"
@@ -59,17 +59,20 @@ export async function getStaticProps({params}){
     }
 
 export default function BlogPost({post}){
-    console.log(post)
+
     return (
-        <main className={styles.Blog}>
+        <main className={styles.blog}>
             <img src={post.coverphoto? post.coverphoto.url: ''} className={styles.cover} alt="" />
-            <div className={styles.title}></div>
-            <img src={post.author.avatar? post.author.avatar.url: ''} alt="" />
-            <div className={styles.authtext}>
-                <h6>By {post.author.name}</h6>
-                <h6 className={styles.date}>{post.datePublished}</h6>
+            <div className={styles.title}>
+                <div className={styles.authdetails}>
+                    <img src={post.author.avatar? post.author.avatar.url: ''} alt={post.author.name} />
+                    <div className={styles.authtext}>
+                        <h6>By {post.author.name}</h6>
+                        <h6 className={styles.date}>{post.datePublished}</h6>
+                    </div>
+                </div>
+                <h1>{post.title}</h1>
             </div>
-            <h2>{post.title}</h2>
             <div className={styles.content} dangerouslySetInnerHTML={{__html: post.content.html}}></div>
         </main>
     )
