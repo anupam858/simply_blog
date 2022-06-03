@@ -4,7 +4,7 @@
   .blog{
 
     /* padding: 0rem 1rem 1rem 1rem; */
-    box-shadow: 15px 20px 40px rgba(216, 211, 211, 0.4);
+    box-shadow: -2px 17px 40px rgb(216 211 211 / 40%);
   }
   
   .title h1 {
@@ -19,6 +19,8 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
   
   .authdetails img {
@@ -64,7 +66,7 @@
   }
   @media screen and (max-width: 768px) {
     .blog {
-      margin: 0rem 1rem;
+      margin: 0rem 0rem;
     }
     .content {
       width: 100%;

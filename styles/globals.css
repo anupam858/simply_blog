@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
 @font-face {
   font-family: "Brand";
-  src: url("../public/Brand.woff");
+  src: url("../public/Brand.woff") format('woff');
 }
 * {
   padding: 0;
